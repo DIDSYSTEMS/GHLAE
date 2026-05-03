@@ -3,12 +3,12 @@ const bcrypt = require('bcryptjs');
 const productsData = require('../src/data/products.json');
 const servicesData = require('../src/data/services.json');
 
-const prisma = new PrismaClient();
+const seedPrisma = new PrismaClient();
 
 async function main() {
   // Create admin user
   const hashedPassword = await bcrypt.hash('admin123', 10);
-  await prisma.user.upsert({
+  await seedPrisma.user.upsert({
     where: { email: 'admin@ghlae.com' },
     update: {},
     create: {
@@ -22,7 +22,7 @@ async function main() {
 
   // Seed Agro Products
   for (const product of productsData.agroProducts) {
-    await prisma.product.upsert({
+    await seedPrisma.product.upsert({
       where: { id: product.id },
       update: {},
       create: {
@@ -39,7 +39,7 @@ async function main() {
 
   // Seed Auto Products
   for (const auto of productsData.autos) {
-    await prisma.product.upsert({
+    await seedPrisma.product.upsert({
       where: { id: auto.id },
       update: {},
       create: {
@@ -59,7 +59,7 @@ async function main() {
 
   // Seed Logistics Services
   for (const service of servicesData.logistics) {
-    await prisma.service.upsert({
+    await seedPrisma.service.upsert({
       where: { id: service.id },
       update: {},
       create: {
@@ -74,7 +74,7 @@ async function main() {
 
   // Seed Agro Services
   for (const service of servicesData.agro) {
-    await prisma.service.upsert({
+    await seedPrisma.service.upsert({
       where: { id: service.id },
       update: {},
       create: {
@@ -96,5 +96,7 @@ main()
     process.exit(1);
   })
   .finally(async () => {
-    await prisma.$disconnect();
+    await seedPrisma.$disconnect();
   });
+
+export {};

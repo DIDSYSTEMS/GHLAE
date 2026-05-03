@@ -1,7 +1,19 @@
-import { NextAuthOptions } from "next-auth";
+import { NextAuthOptions, DefaultSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/lib/db";
 import bcrypt from "bcryptjs";
+
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id: string;
+    } & DefaultSession["user"]
+  }
+
+  interface User {
+    id: string;
+  }
+}
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -46,7 +58,7 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     async session({ session, token }) {
-      if (token) {
+      if (token && session.user) {
         session.user.id = token.id as string;
       }
       return session;
