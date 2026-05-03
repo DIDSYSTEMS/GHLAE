@@ -1,0 +1,66 @@
+{
+  "logistics": [
+    {
+      "id": "clearing-forwarding",
+      "title": "Clearing and Forwarding",
+      "description": "Expert handling of customs clearance and documentation for seamless international trade.",
+      "icon": "Ship"
+    },
+    {
+      "id": "import-export",
+      "title": "Import and Export",
+      "description": "Comprehensive import and export solutions tailored to your business needs.",
+      "icon": "Globe"
+    },
+    {
+      "id": "ocean-air-freight",
+      "title": "Ocean and Air Freight",
+      "description": "Fast and reliable freight services across major global routes.",
+      "icon": "Plane"
+    },
+    {
+      "id": "warehousing",
+      "title": "Warehousing",
+      "description": "Secure and scalable storage solutions for your goods.",
+      "icon": "Warehouse"
+    },
+    {
+      "id": "transportation",
+      "title": "Transportation",
+      "description": "Efficient ground transport services across Nigeria.",
+      "icon": "Truck"
+    },
+    {
+      "id": "courier-services",
+      "title": "Courier Services",
+      "description": "Express delivery for small packages and urgent documents.",
+      "icon": "Package"
+    }
+  ],
+  "agro": [
+    {
+      "id": "cash-crop-production",
+      "title": "Cash Crop Production",
+      "description": "Large-scale cultivation of maize, soybeans, and other essential crops.",
+      "icon": "Leaf"
+    },
+    {
+      "id": "livestock-fisheries",
+      "title": "Livestock and Fisheries",
+      "description": "Modern poultry and fish farming with high-yield practices.",
+      "icon": "Fish"
+    },
+    {
+      "id": "feed-chemical-dist",
+      "title": "Feed and Chemical Distribution",
+      "description": "Supplying high-quality agricultural inputs to local farmers.",
+      "icon": "FlaskConical"
+    },
+    {
+      "id": "commodity-exchange",
+      "title": "Commodity Exchange System",
+      "description": "A robust platform for B2B and B2C agricultural trading.",
+      "icon": "BarChart3"
+    }
+  ]
+}

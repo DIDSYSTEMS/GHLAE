@@ -1,0 +1,54 @@
+{
+  "agroProducts": [
+    {
+      "id": "maize-001",
+      "name": "Premium Yellow Maize",
+      "category": "Grains",
+      "price": 25000,
+      "unit": "per bag",
+      "image": "https://images.unsplash.com/photo-1551735109-1797aa3253b9?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "feed-001",
+      "name": "Poultry Starter Feed",
+      "category": "Animal Feed",
+      "price": 18000,
+      "unit": "per bag",
+      "image": "https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "fish-001",
+      "name": "Fresh Catfish",
+      "category": "Fishery",
+      "price": 1200,
+      "unit": "per kg",
+      "image": "https://images.unsplash.com/photo-1518013391915-e4431959d852?auto=format&fit=crop&q=80&w=800"
+    }
+  ],
+  "autos": [
+    {
+      "id": "truck-001",
+      "name": "Toyota Dyna Truck",
+      "category": "Trucks",
+      "price": 8500000,
+      "specs": {
+        "engine": "Diesel",
+        "capacity": "3 Tons",
+        "year": "2018"
+      },
+      "image": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "tractor-001",
+      "name": "Massey Ferguson Tractor",
+      "category": "Agricultural Machinery",
+      "price": 12000000,
+      "specs": {
+        "hp": "75 HP",
+        "drive": "4WD",
+        "condition": "New"
+      },
+      "image": "https://images.unsplash.com/photo-1594913785162-e6785b40ed1a?auto=format&fit=crop&q=80&w=800"
+    }
+  ]
+}

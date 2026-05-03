@@ -1,0 +1,1236 @@
+GREAT HOPE LOGISTIC AND AGRO-ALLIED ENTERPRISES
+FULL PROJECT PROMPTS + NEXT.JS PRODUCTION CODE PACKAGE
+Prepared Step-by-Step Based on the Full Chat Build Process
+
+============================================================
+PROJECT OVERVIEW
+============================================================
+
+Project Name:
+GREAT HOPE LOGISTIC AND AGRO-ALLIED ENTERPRISES
+
+Main Goal:
+Build a premium multifunctional ecommerce website for logistics, agro-allied business, commodity exchange, auto sales, and service ordering through WhatsApp.
+
+Core Business Sections:
+1. Logistics Services
+2. Agro-Allied Products and Services
+3. Sales of Autos
+4. Commodity Exchange
+5. Corporate Information
+6. WhatsApp-Based Ordering System
+7. Admin Dashboard
+8. Product CMS
+9. Analytics System
+
+============================================================
+STEP 1: PREMIUM UNIVERSAL WEBSITE PROMPT
+============================================================
+
+Use this prompt in any LLM website builder, code generator, or AI development tool.
+
+PROMPT:
+
+Build a premium, modern, and scalable multifunctional eCommerce website for a company named:
+
+"GREAT HOPE LOGISTIC AND AGRO-ALLIED ENTERPRISES"
+
+CORE OBJECTIVE:
+Create a high-end digital platform that integrates:
+- Logistics Services
+- Agro-Allied Business
+- Auto Sales & Maintenance
+- Commodity Exchange
+- Corporate Information
+
+The website must be structured, conversion-focused, mobile-first, and visually premium.
+
+WEBSITE STRUCTURE:
+
+1. Homepage
+- Premium hero section with logistics and agriculture fusion theme
+- Strong headline and value proposition
+- CTA buttons:
+  - Explore Services
+  - Order Now via WhatsApp
+- Sections:
+  - About Preview
+  - Services Overview
+  - Featured Products / Listings
+  - Why Choose Us
+  - Testimonials placeholder
+  - WhatsApp CTA banner
+
+2. About Us Page
+- Full company description
+- Mission, Vision, Core Values
+- Company history
+- Founded November 2025, Lagos Nigeria
+- Partnerships:
+  - Henafek Logistics
+  - Follow Logistics
+  - Green Lake Farms
+  - Adenowo Farms
+- CSR Section:
+  - Youth empowerment
+  - Training
+  - Workshops
+  - Virtual conferences
+  - Startup support
+
+3. Logistics Services Page
+Include:
+- Clearing and Forwarding
+- Import and Export
+- Ocean and Air Freight
+- Warehousing
+- Transportation
+- Courier Services
+
+Each service must have:
+- Description
+- Visual icon/image
+- ORDER VIA WHATSAPP button
+
+4. Agro-Allied Page
+Sections:
+- Cash Crop Production
+- Livestock and Fisheries
+- Feed and Chemical Distribution
+- Commodity Exchange System
+- B2B, B2C, B2T, and hybrid models
+
+Each product/service should have:
+- Image
+- Price placeholder
+- ORDER ON WHATSAPP button
+
+5. Auto Sales and Services Page
+Features:
+- Vehicle listings
+- Trucks
+- Agricultural machines
+- Maintenance and repair services
+- Spare parts
+
+Each listing must include:
+- Image gallery
+- Specifications
+- Price
+- ORDER VIA WHATSAPP button
+
+6. Commodity Exchange Page
+- Explain trading model
+- B2B, B2C, B2T, B2C2T2B
+- CTA for participation
+- WhatsApp inquiry integration
+
+7. Contact Page
+- Address:
+  26, Sam Ogegbo St. Off Bemil Church Victory Estate, Ojodu-Berger, Lagos State
+- Phone numbers:
+  08108231559
+  08153992720
+  08023424190
+- Email:
+  info@GHLAE.com
+- Google Map embed
+- Contact form
+- WhatsApp quick contact button
+
+WHATSAPP ORDER SYSTEM:
+Every ORDER button must:
+- Open WhatsApp via wa.me link
+- Pre-fill message dynamically
+
+Example message:
+"Hello, I want to order [Product/Service Name] from GREAT HOPE LOGISTIC AND AGRO-ALLIED ENTERPRISES."
+
+UI/UX DESIGN DIRECTION:
+- Premium corporate and agro-industrial style
+- Clean grid layout
+- Soft shadows
+- Modern typography
+- Deep Green, Gold/Orange, Dark Gray/Black
+- Smooth animations
+- Hover effects
+- Mobile-first responsiveness
+- Fast loading optimization
+
+TECHNICAL REQUIREMENTS:
+- Framework: Next.js or React
+- SEO optimized
+- Component-based architecture
+- CMS-ready
+- API-ready
+- Optimized images
+- Accessibility compliant
+
+ADVANCED FEATURES:
+- Admin dashboard
+- Product upload system
+- Search and filter
+- Category navigation
+- Testimonials
+- Blog/news
+- Live chat
+- Analytics
+
+FINAL OUTPUT EXPECTATION:
+- Fully responsive website
+- Production-ready UI
+- Clean code structure
+- Scalable architecture
+- WhatsApp-first ordering system
+
+============================================================
+STEP 2: BASE NEXT.JS PRODUCTION CODEBASE
+============================================================
+
+Recommended Stack:
+- Next.js 14 App Router
+- React
+- TailwindCSS
+- TypeScript
+
+package.json:
+
+{
+  "name": "great-hope-platform",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}
+
+File: app/layout.tsx
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="bg-black text-white">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}
+
+File: components/Navbar.tsx
+
+import Link from 'next/link';
+
+export default function Navbar() {
+  return (
+    <nav className="flex justify-between p-4 border-b border-gray-800">
+      <h1 className="font-bold">GREAT HOPE</h1>
+      <div className="flex gap-4">
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+        <Link href="/logistics">Logistics</Link>
+        <Link href="/agro">Agro</Link>
+        <Link href="/auto">Auto</Link>
+        <Link href="/contact">Contact</Link>
+      </div>
+    </nav>
+  );
+}
+
+File: components/Footer.tsx
+
+export default function Footer() {
+  return (
+    <footer className="p-4 border-t border-gray-800 text-center">
+      © 2026 GREAT HOPE ENTERPRISES
+    </footer>
+  );
+}
+
+============================================================
+STEP 3: WHATSAPP ORDER BUTTON
+============================================================
+
+File: components/WhatsAppButton.tsx
+
+export default function WhatsAppButton({ item }: { item: string }) {
+  const phone = "2348108231559";
+  const message = encodeURIComponent(
+    `Hello, I want to order ${item} from GREAT HOPE LOGISTIC AND AGRO-ALLIED ENTERPRISES.`
+  );
+
+  return (
+    <a
+      href={`https://wa.me/${phone}?text=${message}`}
+      target="_blank"
+      className="bg-green-600 px-4 py-2 rounded"
+    >
+      ORDER VIA WHATSAPP
+    </a>
+  );
+}
+
+============================================================
+STEP 4: CORE WEBSITE PAGES
+============================================================
+
+File: app/page.tsx
+
+import WhatsAppButton from '@/components/WhatsAppButton';
+
+export default function Home() {
+  return (
+    <main className="p-6">
+      <section className="text-center py-20">
+        <h1 className="text-4xl font-bold">Logistics + Agro Powerhouse</h1>
+        <p className="mt-4">Premium services across logistics, agriculture, and auto.</p>
+        <div className="mt-6 flex justify-center gap-4">
+          <WhatsAppButton item="General Inquiry" />
+        </div>
+      </section>
+    </main>
+  );
+}
+
+File: app/about/page.tsx
+
+export default function About() {
+  return (
+    <main className="p-6">
+      <h1 className="text-3xl font-bold">About Us</h1>
+      <p className="mt-4">
+        Founded in 2025, GREAT HOPE LOGISTIC AND AGRO-ALLIED ENTERPRISES operates in logistics, agro-allied services, and auto solutions.
+      </p>
+    </main>
+  );
+}
+
+File: app/logistics/page.tsx
+
+import WhatsAppButton from '@/components/WhatsAppButton';
+
+const services = [
+  "Clearing & Forwarding",
+  "Import & Export",
+  "Ocean & Air Freight",
+  "Warehousing",
+  "Transportation"
+];
+
+export default function Logistics() {
+  return (
+    <main className="p-6 grid gap-6">
+      <h1 className="text-3xl font-bold">Logistics Services</h1>
+      {services.map((service) => (
+        <div key={service} className="border p-4 rounded">
+          <h2 className="font-bold">{service}</h2>
+          <WhatsAppButton item={service} />
+        </div>
+      ))}
+    </main>
+  );
+}
+
+File: app/agro/page.tsx
+
+import WhatsAppButton from '@/components/WhatsAppButton';
+
+const products = ["Maize", "Poultry Feed", "Fishery Products"];
+
+export default function Agro() {
+  return (
+    <main className="p-6 grid gap-6">
+      <h1 className="text-3xl font-bold">Agro Products</h1>
+      {products.map((product) => (
+        <div key={product} className="border p-4 rounded">
+          <h2>{product}</h2>
+          <WhatsAppButton item={product} />
+        </div>
+      ))}
+    </main>
+  );
+}
+
+File: app/auto/page.tsx
+
+import WhatsAppButton from '@/components/WhatsAppButton';
+
+const vehicles = ["Toyota Truck", "Farm Tractor"];
+
+export default function Auto() {
+  return (
+    <main className="p-6 grid gap-6">
+      <h1 className="text-3xl font-bold">Auto Sales</h1>
+      {vehicles.map((v) => (
+        <div key={v} className="border p-4 rounded">
+          <h2>{v}</h2>
+          <WhatsAppButton item={v} />
+        </div>
+      ))}
+    </main>
+  );
+}
+
+File: app/contact/page.tsx
+
+export default function Contact() {
+  return (
+    <main className="p-6">
+      <h1 className="text-3xl font-bold">Contact</h1>
+      <p>26 Sam Ogegbo St, Lagos</p>
+      <p>08108231559</p>
+      <p>info@ghlae.com</p>
+    </main>
+  );
+}
+
+============================================================
+STEP 5: ADMIN DASHBOARD + PRODUCT CMS
+============================================================
+
+Install dependencies:
+
+npm install prisma @prisma/client next-auth bcrypt
+
+Initialize Prisma:
+
+npx prisma init
+
+File: prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id        String   @id @default(cuid())
+  name      String
+  category  String
+  price     Float?
+  image     String?
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id       String @id @default(cuid())
+  email    String @unique
+  password String
+}
+
+Run migration:
+
+npx prisma migrate dev
+
+File: lib/db.ts
+
+import { PrismaClient } from '@prisma/client';
+export const db = new PrismaClient();
+
+File: app/api/products/route.ts
+
+import { db } from '@/lib/db';
+
+export async function POST(req: Request) {
+  const data = await req.json();
+  const product = await db.product.create({ data });
+  return Response.json(product);
+}
+
+export async function GET() {
+  const products = await db.product.findMany();
+  return Response.json(products);
+}
+
+============================================================
+STEP 6: SECURE ADMIN SYSTEM
+============================================================
+
+File: app/api/auth/[...nextauth]/route.ts
+
+import NextAuth from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import { db } from '@/lib/db';
+import bcrypt from 'bcrypt';
+
+const handler = NextAuth({
+  providers: [
+    CredentialsProvider({
+      name: 'Credentials',
+      credentials: {
+        email: {},
+        password: {}
+      },
+      async authorize(credentials) {
+        const user = await db.user.findUnique({
+          where: { email: credentials?.email }
+        });
+
+        if (!user) return null;
+
+        const isValid = await bcrypt.compare(
+          credentials!.password,
+          user.password
+        );
+
+        if (!isValid) return null;
+
+        return { id: user.id, email: user.email };
+      }
+    })
+  ],
+  session: {
+    strategy: 'jwt'
+  },
+  pages: {
+    signIn: '/login'
+  }
+});
+
+export { handler as GET, handler as POST };
+
+File: app/login/page.tsx
+
+'use client';
+import { signIn } from 'next-auth/react';
+import { useState } from 'react';
+
+export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    await signIn('credentials', {
+      email,
+      password,
+      callbackUrl: '/admin'
+    });
+  };
+
+  return (
+    <main className="p-6 max-w-md mx-auto">
+      <h1 className="text-2xl font-bold">Admin Login</h1>
+      <div className="mt-4 grid gap-4">
+        <input placeholder="Email" className="p-2 text-black" onChange={(e) => setEmail(e.target.value)} />
+        <input type="password" placeholder="Password" className="p-2 text-black" onChange={(e) => setPassword(e.target.value)} />
+        <button onClick={handleLogin} className="bg-green-600 p-2">Login</button>
+      </div>
+    </main>
+  );
+}
+
+File: middleware.ts
+
+import { withAuth } from 'next-auth/middleware';
+
+export default withAuth({
+  pages: {
+    signIn: '/login'
+  }
+});
+
+export const config = {
+  matcher: ['/admin', '/admin/:path*']
+};
+
+Environment variables:
+
+DATABASE_URL=
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+Generate NEXTAUTH_SECRET:
+
+openssl rand -base64 32
+
+============================================================
+STEP 7: PRODUCT EDIT / DELETE SYSTEM
+============================================================
+
+File: app/api/products/[id]/route.ts
+
+import { db } from '@/lib/db';
+
+export async function PUT(req: Request, { params }: { params: { id: string } }) {
+  const data = await req.json();
+
+  const updated = await db.product.update({
+    where: { id: params.id },
+    data
+  });
+
+  return Response.json(updated);
+}
+
+export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+  await db.product.delete({ where: { id: params.id } });
+  return Response.json({ success: true });
+}
+
+============================================================
+STEP 8: IMAGE UPLOAD SYSTEM WITH CLOUDINARY
+============================================================
+
+Install:
+
+npm install cloudinary
+
+File: lib/cloudinary.ts
+
+import { v2 as cloudinary } from 'cloudinary';
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+export default cloudinary;
+
+File: app/api/upload/route.ts
+
+import cloudinary from '@/lib/cloudinary';
+
+export async function POST(req: Request) {
+  const formData = await req.formData();
+  const file = formData.get('file') as File;
+
+  const bytes = await file.arrayBuffer();
+  const buffer = Buffer.from(bytes);
+
+  const upload = await new Promise((resolve, reject) => {
+    cloudinary.uploader.upload_stream({}, (err, result) => {
+      if (err) reject(err);
+      else resolve(result);
+    }).end(buffer);
+  });
+
+  return Response.json(upload);
+}
+
+============================================================
+STEP 9: PREMIUM ADMIN DASHBOARD UI
+============================================================
+
+Features:
+- Table layout
+- Search bar
+- Category filter
+- Image thumbnails
+- Loading states
+- Pagination
+- Delete confirmation
+
+File: app/admin/page.tsx
+
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useSession, signOut } from 'next-auth/react';
+
+export default function Admin() {
+  const { data: session } = useSession();
+  const [products, setProducts] = useState<any[]>([]);
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('all');
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const ITEMS_PER_PAGE = 5;
+
+  const fetchProducts = async () => {
+    setLoading(true);
+    const res = await fetch('/api/products');
+    const data = await res.json();
+    setProducts(data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const filtered = products.filter((p) => {
+    const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = category === 'all' || p.category === category;
+    return matchesSearch && matchesCategory;
+  });
+
+  const paginated = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+
+  const handleDelete = async (id: string) => {
+    if (!confirm('Delete this product?')) return;
+    await fetch(`/api/products/${id}`, { method: 'DELETE' });
+    fetchProducts();
+  };
+
+  if (!session) return <p>Loading...</p>;
+
+  return (
+    <main className="p-6">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+        <button onClick={() => signOut()} className="bg-red-500 px-3 py-1 rounded">Logout</button>
+      </div>
+
+      <div className="flex gap-4 mb-4">
+        <input
+          placeholder="Search product..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="p-2 text-black w-full"
+        />
+
+        <select value={category} onChange={(e) => setCategory(e.target.value)} className="p-2 text-black">
+          <option value="all">All</option>
+          <option value="agro">Agro</option>
+          <option value="auto">Auto</option>
+          <option value="logistics">Logistics</option>
+        </select>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="w-full border border-gray-700">
+          <thead className="bg-gray-800">
+            <tr>
+              <th className="p-2 text-left">Image</th>
+              <th className="p-2 text-left">Name</th>
+              <th className="p-2 text-left">Category</th>
+              <th className="p-2 text-left">Price</th>
+              <th className="p-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {loading ? (
+              <tr><td colSpan={5} className="text-center p-4">Loading...</td></tr>
+            ) : paginated.length === 0 ? (
+              <tr><td colSpan={5} className="text-center p-4">No products found</td></tr>
+            ) : (
+              paginated.map((p) => (
+                <tr key={p.id} className="border-t border-gray-700">
+                  <td className="p-2">
+                    <img src={p.image || '/placeholder.png'} className="w-12 h-12 object-cover rounded" />
+                  </td>
+                  <td className="p-2">{p.name}</td>
+                  <td className="p-2 capitalize">{p.category}</td>
+                  <td className="p-2">₦{p.price}</td>
+                  <td className="p-2 flex gap-2">
+                    <button className="bg-yellow-500 px-2 py-1 rounded">Edit</button>
+                    <button className="bg-red-600 px-2 py-1 rounded" onClick={() => handleDelete(p.id)}>Delete</button>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="flex justify-center gap-2 mt-4">
+        {Array.from({ length: totalPages }, (_, i) => (
+          <button key={i} onClick={() => setPage(i + 1)} className={`px-3 py-1 ${page === i + 1 ? 'bg-green-600' : 'bg-gray-700'}`}>
+            {i + 1}
+          </button>
+        ))}
+      </div>
+    </main>
+  );
+}
+
+============================================================
+STEP 10: MULTI-IMAGE PRODUCT GALLERY
+============================================================
+
+Update Prisma Product model:
+
+model Product {
+  id        String   @id @default(cuid())
+  name      String
+  price     Float?
+  images    String[]
+  createdAt DateTime @default(now())
+}
+
+Multi-image upload logic:
+
+const [images, setImages] = useState<File[]>([]);
+
+<input
+  type="file"
+  multiple
+  onChange={(e) => setImages(Array.from(e.target.files || []))}
+/>
+
+const uploadImages = async () => {
+  const uploads = images.map(async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const res = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData
+    });
+
+    const data = await res.json();
+    return data.secure_url;
+  });
+
+  return Promise.all(uploads);
+};
+
+File: components/ProductGallery.tsx
+
+'use client';
+import { useState } from 'react';
+
+export default function ProductGallery({ images }: { images: string[] }) {
+  const [active, setActive] = useState(images[0]);
+
+  return (
+    <div>
+      <img src={active || '/placeholder.png'} className="w-full h-64 object-cover rounded" />
+
+      <div className="flex gap-2 mt-2">
+        {images.map((img, i) => (
+          <img
+            key={i}
+            src={img}
+            onClick={() => setActive(img)}
+            className="w-16 h-16 object-cover cursor-pointer border"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+============================================================
+STEP 11: ADMIN-CONTROLLED CATEGORY MANAGEMENT SYSTEM
+============================================================
+
+Update Prisma schema:
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  products  Product[]
+}
+
+model Product {
+  id         String    @id @default(cuid())
+  name       String
+  price      Float?
+  images     String[]
+  categoryId String
+  category   Category  @relation(fields: [categoryId], references: [id])
+  createdAt  DateTime  @default(now())
+}
+
+File: app/api/categories/route.ts
+
+import { db } from '@/lib/db';
+
+export async function GET() {
+  const categories = await db.category.findMany();
+  return Response.json(categories);
+}
+
+export async function POST(req: Request) {
+  const { name } = await req.json();
+  const category = await db.category.create({ data: { name } });
+  return Response.json(category);
+}
+
+File: app/api/categories/[id]/route.ts
+
+import { db } from '@/lib/db';
+
+export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+  await db.category.delete({ where: { id: params.id } });
+  return Response.json({ success: true });
+}
+
+Admin category UI logic:
+
+const [categories, setCategories] = useState<any[]>([]);
+const [newCategory, setNewCategory] = useState('');
+
+const fetchCategories = async () => {
+  const res = await fetch('/api/categories');
+  const data = await res.json();
+  setCategories(data);
+};
+
+const handleAddCategory = async () => {
+  await fetch('/api/categories', {
+    method: 'POST',
+    body: JSON.stringify({ name: newCategory })
+  });
+  setNewCategory('');
+  fetchCategories();
+};
+
+const handleDeleteCategory = async (id: string) => {
+  if (!confirm('Delete category?')) return;
+  await fetch(`/api/categories/${id}`, { method: 'DELETE' });
+  fetchCategories();
+};
+
+Category dropdown for product creation:
+
+<select onChange={(e) => setCategory(e.target.value)} className="p-2 text-black">
+  <option>Select Category</option>
+  {categories.map((c) => (
+    <option key={c.id} value={c.id}>{c.name}</option>
+  ))}
+</select>
+
+============================================================
+STEP 12: PRODUCT DETAIL PAGE WITH GALLERY + WHATSAPP ORDER
+============================================================
+
+Route:
+/products/[id]
+
+File: app/products/[id]/page.tsx
+
+import ProductGallery from '@/components/ProductGallery';
+import WhatsAppButton from '@/components/WhatsAppButton';
+import { db } from '@/lib/db';
+
+async function getProduct(id: string) {
+  return db.product.findUnique({
+    where: { id },
+    include: { category: true }
+  });
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const product = await db.product.findUnique({ where: { id: params.id } });
+
+  return {
+    title: product?.name || 'Product',
+    description: `Buy ${product?.name} from GREAT HOPE via WhatsApp`
+  };
+}
+
+export default async function ProductPage({ params }: { params: { id: string } }) {
+  const product = await getProduct(params.id);
+
+  if (!product) {
+    return (
+      <main className="p-6">
+        <h1 className="text-2xl">Product not found</h1>
+      </main>
+    );
+  }
+
+  return (
+    <main className="p-6 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <ProductGallery images={product.images || []} />
+        </div>
+
+        <div>
+          <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
+          <p className="text-gray-400 mb-2 capitalize">Category: {product.category?.name}</p>
+          <p className="text-2xl font-semibold mb-4">₦{product.price}</p>
+          <p className="mb-6 text-gray-300">
+            High-quality product available for immediate order. Contact us directly via WhatsApp for fast processing.
+          </p>
+          <WhatsAppButton item={product.name} productId={product.id} price={product.price} />
+        </div>
+      </div>
+    </main>
+  );
+}
+
+Link from product listing:
+
+import Link from 'next/link';
+
+<Link href={`/products/${product.id}`}>
+  <h2>{product.name}</h2>
+</Link>
+
+============================================================
+STEP 13: WHATSAPP CLICK TRACKING + ANALYTICS SYSTEM
+============================================================
+
+Update Prisma schema:
+
+model WhatsAppClick {
+  id        String   @id @default(cuid())
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id])
+  itemName  String
+  phone     String
+  pageUrl   String?
+  userAgent String?
+  createdAt DateTime @default(now())
+}
+
+Update Product model:
+
+model Product {
+  id             String          @id @default(cuid())
+  name           String
+  price          Float?
+  images         String[]
+  categoryId     String
+  category       Category        @relation(fields: [categoryId], references: [id])
+  whatsappClicks WhatsAppClick[]
+  createdAt      DateTime        @default(now())
+}
+
+Run migration:
+
+npx prisma migrate dev
+
+File: app/api/analytics/whatsapp-click/route.ts
+
+import { db } from '@/lib/db';
+
+export async function POST(req: Request) {
+  const body = await req.json();
+  const userAgent = req.headers.get('user-agent') || 'unknown';
+
+  const click = await db.whatsAppClick.create({
+    data: {
+      productId: body.productId || null,
+      itemName: body.itemName,
+      phone: body.phone,
+      pageUrl: body.pageUrl,
+      userAgent
+    }
+  });
+
+  return Response.json({ success: true, click });
+}
+
+File: app/api/admin/analytics/route.ts
+
+import { db } from '@/lib/db';
+
+export async function GET() {
+  const totalClicks = await db.whatsAppClick.count();
+
+  const recentClicks = await db.whatsAppClick.findMany({
+    take: 10,
+    orderBy: { createdAt: 'desc' },
+    include: {
+      product: {
+        include: { category: true }
+      }
+    }
+  });
+
+  const topProducts = await db.whatsAppClick.groupBy({
+    by: ['productId', 'itemName'],
+    _count: { id: true },
+    orderBy: {
+      _count: { id: 'desc' }
+    },
+    take: 5
+  });
+
+  return Response.json({
+    totalClicks,
+    recentClicks,
+    topProducts
+  });
+}
+
+File: components/WhatsAppButton.tsx
+
+'use client';
+
+type WhatsAppButtonProps = {
+  item: string;
+  productId?: string;
+  price?: number | null;
+};
+
+export default function WhatsAppButton({ item, productId, price }: WhatsAppButtonProps) {
+  const phone = '2348108231559';
+
+  const message = encodeURIComponent(
+    `Hello, I am interested in ${item}${price ? ` priced at ₦${price}` : ''}. Please provide more details.`
+  );
+
+  const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
+
+  const handleClick = async () => {
+    try {
+      await fetch('/api/analytics/whatsapp-click', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          productId,
+          itemName: item,
+          phone,
+          pageUrl: window.location.href
+        })
+      });
+    } catch (error) {
+      console.error('Failed to track WhatsApp click', error);
+    }
+
+    window.open(whatsappUrl, '_blank');
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded font-semibold"
+    >
+      ORDER VIA WHATSAPP
+    </button>
+  );
+}
+
+File: app/admin/analytics/page.tsx
+
+'use client';
+
+import { useEffect, useState } from 'react';
+
+export default function AnalyticsPage() {
+  const [analytics, setAnalytics] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadAnalytics = async () => {
+      const res = await fetch('/api/admin/analytics');
+      const data = await res.json();
+      setAnalytics(data);
+      setLoading(false);
+    };
+
+    loadAnalytics();
+  }, []);
+
+  if (loading) return <main className="p-6">Loading analytics...</main>;
+
+  return (
+    <main className="p-6">
+      <h1 className="text-3xl font-bold mb-6">WhatsApp Analytics</h1>
+
+      <div className="grid md:grid-cols-3 gap-4 mb-8">
+        <div className="bg-gray-800 p-4 rounded">
+          <p className="text-gray-400">Total WhatsApp Clicks</p>
+          <h2 className="text-3xl font-bold">{analytics.totalClicks}</h2>
+        </div>
+      </div>
+
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-4">Top Products</h2>
+        <div className="grid gap-3">
+          {analytics.topProducts.map((item: any) => (
+            <div key={item.itemName} className="bg-gray-800 p-4 rounded flex justify-between">
+              <span>{item.itemName}</span>
+              <strong>{item._count.id} clicks</strong>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold mb-4">Recent WhatsApp Leads</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full border border-gray-700">
+            <thead className="bg-gray-800">
+              <tr>
+                <th className="p-2 text-left">Product / Service</th>
+                <th className="p-2 text-left">Category</th>
+                <th className="p-2 text-left">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {analytics.recentClicks.map((click: any) => (
+                <tr key={click.id} className="border-t border-gray-700">
+                  <td className="p-2">{click.itemName}</td>
+                  <td className="p-2">{click.product?.category?.name || 'General'}</td>
+                  <td className="p-2">{new Date(click.createdAt).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+Admin navigation link:
+
+<Link href="/admin/analytics">Analytics</Link>
+
+============================================================
+STEP 14: PRODUCTION HARDENING CHECKLIST
+============================================================
+
+Before deployment, complete these:
+
+1. Protect all admin API routes with session validation.
+2. Add rate limiting to WhatsApp click tracking route.
+3. Add Zod validation to product, category, and upload APIs.
+4. Prevent deleting categories that still have products.
+5. Use Next.js Image component instead of regular img tags.
+6. Store secrets only in environment variables.
+7. Add role-based access control for admin/staff.
+8. Add Cloudinary upload limits and image type validation.
+9. Use server-side filtering for large product catalogs.
+10. Add analytics date filters: today, 7 days, 30 days, all time.
+11. Deploy database on Supabase, Neon, Railway, or similar.
+12. Deploy frontend on Vercel.
+13. Add domain, SSL, SEO metadata, and sitemap.
+
+============================================================
+STEP 15: FINAL BUSINESS POSITIONING
+============================================================
+
+This project is not just a normal website.
+
+It is a WhatsApp-first commerce platform for businesses that sell products or services through direct customer conversations.
+
+It can serve:
+- Agro-allied businesses
+- Logistics companies
+- Auto dealers
+- Service providers
+- SMEs
+- Local vendors
+
+Potential SaaS Positioning:
+"A Shopify-style WhatsApp commerce platform for African businesses."
+
+Future SaaS Features:
+- Multi-business accounts
+- Each business gets its own dashboard
+- Each business gets its own WhatsApp number
+- Business-specific products and categories
+- Subscription billing
+- Custom storefronts
+- Analytics dashboard per business
+
+============================================================
+END OF PACKAGE
+============================================================
