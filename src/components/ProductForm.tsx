@@ -169,9 +169,18 @@ export default function ProductForm({ initialData, isEditing = false }: ProductF
         {/* Image Upload */}
         <div className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">Product Image</label>
+            <label className="block text-sm font-medium text-gray-400 mb-2">Product Image URL (Optional if uploading)</label>
+            <input
+              type="text"
+              value={formData.image}
+              onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+              className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl py-3 px-4 focus:outline-none focus:border-accent/50 transition-all mb-4"
+              placeholder="https://images.unsplash.com/..."
+            />
+            
+            <label className="block text-sm font-medium text-gray-400 mb-2">Or Upload Image</label>
             <div className="relative group">
-              {formData.image ? (
+              {formData.image && formData.image.startsWith('https://res.cloudinary.com') ? (
                 <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10">
                   <Image
                     src={formData.image}
@@ -187,6 +196,10 @@ export default function ProductForm({ initialData, isEditing = false }: ProductF
                     <X className="w-4 h-4" />
                   </button>
                 </div>
+              ) : formData.image ? (
+                 <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex items-center justify-center">
+                    <p className="text-xs text-gray-500 text-center px-4 break-all">Image Link active: {formData.image.substring(0, 50)}...</p>
+                 </div>
               ) : (
                 <label className="flex flex-col items-center justify-center aspect-video rounded-2xl border-2 border-dashed border-white/10 hover:border-accent/50 hover:bg-accent/5 transition-all cursor-pointer">
                   {isUploading ? (
