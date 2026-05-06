@@ -1,0 +1,13 @@
+ANTIGRAVITY PROMPT FOR PREMIUM ECOMMERCE  (https://www.youtube.com/watch?v=QwHlcgqVH7Q)
+
+Create a full, professional eCommerce website for a car lot brand named "GREAT HOPE AUTO". Include a modern homepage, brand story, car listing pages, product detail pages, cart, checkout, and user account system. Design should be stylish, mobile-responsive, and conversion-focused with categories for men, women, and new arrivals. Add payment gateway integration, order tracking, admin dashboard, SEO optimization, and fast loading performance. Use a premium fashion aesthetic with clear CTAs, banners, reviews, and social media integration.
+
+
+
+AI STUDIO 1 PROMPT:
+
+Create a modern, responsive hospital website with a green medical theme including homepage, departments, doctors listing, login/signup, appointment booking, and patient dashboard UI. Then convert it into a full stack app by adding authentication and a cloud database to manage users, doctors, appointments, and reports.
+
+Allow users to browse departments, view doctors, log in, and book appointments with date and time selection. After login, provide a dashboard to view appointments and upload reports, ensuring each user accesses only their own data.
+
+Also create an admin panel to manage doctors, patients, and appointments with filtering and tracking features. Ensure everything is fully connected and works dynamically as a real-world application.
