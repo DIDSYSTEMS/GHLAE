@@ -1,11 +1,11 @@
 [build]
-  # We generate the Prisma client before building the Next.js application.
-  command = "npx prisma generate && npm run build"
+  command = "npm run build"
   publish = ".next"
 
-# This ensures that your Next.js project is properly handled by Netlify's Next.js Runtime
 [build.environment]
   NEXT_PRIVATE_LOCAL_WEBPACK = "true"
+  # SQLite for build-time Prisma client generation
+  DATABASE_URL = "file:./dev.db"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

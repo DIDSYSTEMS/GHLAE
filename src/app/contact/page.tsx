@@ -83,7 +83,7 @@ export default function Contact() {
           {/* Map embed */}
           <GlassCard className="overflow-hidden p-0 rounded-2xl min-h-[360px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.1761869432!2d3.363!3d6.641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzgnMjcuNiJOIDPCsDIxJzQ2LjgiRQ!5e0!3m2!1sen!2sng!4v1620000000000!5m2!1sen!2sng"
+              src="https://maps.google.com/maps?q=26%20Sam%20Ogegbo%20St,%20Ojodu-Berger,%20Lagos&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "360px", filter: "invert(90%) hue-rotate(180deg)" }}
