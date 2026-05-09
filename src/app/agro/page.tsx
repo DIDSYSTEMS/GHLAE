@@ -6,12 +6,14 @@ import GlassCard from "@/components/GlassCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import prisma from "@/lib/db";
 
-export const dynamic = "force-static";
+
 
 export const metadata = {
   title: "Agro-Allied | GREAT HOPE Logistic and Agro-Allied Enterprises",
   description: "Premium agro-allied products and services — cash crops, livestock, fisheries, feed, and commodity exchange.",
 };
+
+export const dynamic = "force-static";
 
 export default async function AgroAllied() {
   const [agroServices, agroProducts] = await Promise.all([

@@ -8,7 +8,7 @@ import Link from "next/link";
 import { ChevronLeft, Tag, Layers } from "lucide-react";
 import { Metadata } from "next";
 
-export const dynamic = "force-static";
+
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     description: product ? `Buy ${product.name} from GREAT HOPE via WhatsApp` : "",
   };
 }
+
+export const dynamicParams = false;
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   const products = await prisma.product.findMany({ select: { id: true } });

@@ -6,12 +6,14 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import prisma from "@/lib/db";
 import { Wrench, Package, Star } from "lucide-react";
 
-export const dynamic = "force-static";
+
 
 export const metadata = {
   title: "Auto Sales | GREAT HOPE Logistic and Agro-Allied Enterprises",
   description: "High-quality trucks, agricultural machinery, and reliable vehicles for your business operations.",
 };
+
+export const dynamic = "force-static";
 
 const autoServices = [
   { icon: Wrench, title: "Vehicle Servicing & Repair", desc: "Full maintenance and repair for trucks, farm machines, and commercial vehicles." },

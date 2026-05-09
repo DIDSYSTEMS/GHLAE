@@ -6,12 +6,14 @@ import GlassCard from "@/components/GlassCard";
 import prisma from "@/lib/db";
 import { Ship, Plane, Package, Truck, FileText, Globe } from "lucide-react";
 
-export const dynamic = "force-static";
+
 
 export const metadata = {
   title: "Logistics Services | GREAT HOPE Logistic and Agro-Allied Enterprises",
   description: "Premium clearing & forwarding, import/export, ocean & air freight, warehousing, and transportation services.",
 };
+
+export const dynamic = "force-static";
 
 const highlights = [
   { icon: FileText, label: "Clearing & Forwarding" },
