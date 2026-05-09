@@ -4,8 +4,6 @@
 
 [build.environment]
   NEXT_PRIVATE_LOCAL_WEBPACK = "true"
-  # SQLite for build-time Prisma client generation
-  DATABASE_URL = "file:./dev.db"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
