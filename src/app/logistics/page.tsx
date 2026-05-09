@@ -6,7 +6,7 @@ import GlassCard from "@/components/GlassCard";
 import prisma from "@/lib/db";
 import { Ship, Plane, Package, Truck, FileText, Globe } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 export const metadata = {
   title: "Logistics Services | GREAT HOPE Logistic and Agro-Allied Enterprises",

@@ -6,7 +6,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import prisma from "@/lib/db";
 import { Wrench, Package, Star } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 export const metadata = {
   title: "Auto Sales | GREAT HOPE Logistic and Agro-Allied Enterprises",

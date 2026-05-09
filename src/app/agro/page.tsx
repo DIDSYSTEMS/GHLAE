@@ -6,7 +6,7 @@ import GlassCard from "@/components/GlassCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import prisma from "@/lib/db";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 export const metadata = {
   title: "Agro-Allied | GREAT HOPE Logistic and Agro-Allied Enterprises",
